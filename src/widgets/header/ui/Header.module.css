@@ -1,0 +1,30 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--primary);
+  padding: 0 3.9rem;
+  height: fit-content;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  font-weight: 400;
+  color: var(--secondary);
+  text-decoration: none;
+  background-color: var(--primary);
+  padding: 1.3rem 1rem;
+}
+
+.link:hover {
+  background-color: var(--primary-hover);
+}
+
+.activeLink {
+  background-color: var(--primary-hover);
+}
