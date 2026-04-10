@@ -1,32 +1,57 @@
-# Задание для Front-end стажёра
+# Cat Pinterest
 
-Привет! Если ты хочешь стать частью команды Учи.ру в рамках стажёрской программы, 
-то тебе необходимо выполнить небольшое тестовое задание. Это нужно, что бы твои 
-потенциальные наставники смогли оценить твои навыки и сравнив их с остальными
-кандидатами выбрать лучших из лучших. 
+## Project overview
+Cat Pinterest is a production-oriented React application for browsing cat images from TheCatAPI and saving favorites.
 
-Помни, что работающий продукт важнее количества технологий и красивого кода. 
+## Tech stack
+- React 19
+- TypeScript 6
+- Vite 8
+- React Router DOM 7
+- TanStack Query 5
+- Zustand 5
+- Axios
+- Vitest + Testing Library
+- Storybook 10
+- ESLint + Prettier
 
-Удачи!
+## Setup instructions
+### 1. Prerequisites
+- Node.js 20+
+- npm 10+
 
-## Что нужно сделать ?
+### 2. Install dependencies
+```bash
+npm install
+```
 
-- форкнуть этот репозитарий в свой github аккаунт
-- реализовать проект по описанию ниже
-- опубликовать его на github pages
-- прислать нам свой гитхаб аккаунт и ссылку на опубликованный сайт
-- ждать обратной связи :)
+### 3. Configure environment variables
+Create `.env` from `.env.example` and set values:
 
-## Проект "Кошачий пинтерест"
+```bash
+VITE_API_URL=https://api.thecatapi.com/v1
+VITE_API_KEY=your-real-thecatapi-key
+VITE_BASE_PATH=your/base/path
+```
 
-Необходимо реализовать интерфейс для просмотра котиков используя API https://thecatapi.com
+### 4. Run development server
+```bash
+npm run dev
+```
 
-Дизайн лежит тут - https://bit.ly/3utxaL2
+### 5. Run quality checks
+```bash
+npm run type-check
+npm run lint
+npm run test:unit:run
+npm run test:storybook:run
+```
 
-- по умолчанию должна открываться вкладка "все котики"
-- у котика должна быть возможность добавить в "любимые" и убрать из "любимых"
-- данные о "любимых" котиках должны хранится на клиенте
-- на вкладке "любимые котики" должны отображаться добавленные в "любимые" котики
-- реализация адаптивности будет плюсом, но не обязательна
-- бесконечная прокрутка будет плюсом, но не обязательна
-- можно использовать любой фреймворк включая vanilla.js
+### 6. Build for production
+```bash
+npm run build
+npm run preview
+```
+
+## Demo link
+- Production demo: https://a6ad0n.github.io/frontend-challenge/

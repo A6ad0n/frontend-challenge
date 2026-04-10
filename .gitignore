@@ -1,4 +1,17 @@
-.idea
-node_modules/
-*.tsbuildinfo
+node_modules
+dist
 
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+*.log
+*.local
+
+*storybook.log
+storybook-static
+
+.env
+.env.*
+!.env.example
