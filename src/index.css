@@ -5,6 +5,8 @@
   --primary: #2196f3;
   --primary-hover: #1e88e5;
   --secondary: #fff;
+  --skeleton-base: #e0e0e0;
+  --skeleton-glow: #f5f5f5;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
 
@@ -23,17 +25,18 @@
   }
 }
 
-/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
-    --primary: #2196f3;
-    --primary-hover: #1e88e5;
-    --secondary: #fff;
+    --primary: ##64b5f6;
+    --primary-hover: #90caf9;
+    --secondary: #1e1e1e;
+    --skeleton-base: #2c2c2c;
+    --skeleton-glow: #3a3a3a;
   }
-} */
+}
 
 body {
   margin: 0;
