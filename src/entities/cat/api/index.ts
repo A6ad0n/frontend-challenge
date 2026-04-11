@@ -1,1 +1,1 @@
-export { useCatsInfiniteQuery, useCatByIdQuery } from './queries';
+export { useCatsInfiniteQuery, useCatByIdQuery, useCatsByIdsQuery } from './queries';
