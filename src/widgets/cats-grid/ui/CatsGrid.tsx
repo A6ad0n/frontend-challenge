@@ -9,7 +9,7 @@ interface CatsGridProps {
   skeletonCount?: number;
 }
 
-export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 8 }: CatsGridProps) => {
+export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGridProps) => {
   if (isLoading) {
     return (
       <>
@@ -23,7 +23,7 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 8 }: CatsGri
             <CatCardSkeleton key={`skeleton-${index}`} />
           ))}
         </div>
-        <p className={styles.empty}>... загружаем еще котиков ...</p>;
+        <p className={styles.loading}>... загружаем еще котиков ...</p>
       </>
     );
   }

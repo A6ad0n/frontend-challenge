@@ -6,6 +6,7 @@ interface CatCardMediaProps {
   title: string;
   isImageLoaded: boolean;
   onImageLoad: () => void;
+  shouldLoadImage: boolean;
 }
 
 export const CatCardMedia = ({
@@ -13,12 +14,15 @@ export const CatCardMedia = ({
   title,
   isImageLoaded,
   onImageLoad,
+  shouldLoadImage,
 }: CatCardMediaProps) => {
   return (
     <>
-      {!isImageLoaded && <div className={styles.skeletonImage} aria-hidden="true" />}
+      {!isImageLoaded && shouldLoadImage && (
+        <div className={styles.skeletonImage} aria-hidden="true" />
+      )}
       <img
-        src={imageSrc}
+        src={shouldLoadImage ? imageSrc : undefined}
         alt={title}
         loading="lazy"
         decoding="async"
