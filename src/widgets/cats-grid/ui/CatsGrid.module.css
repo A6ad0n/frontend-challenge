@@ -4,8 +4,12 @@
   align-items: start;
   gap: 1rem;
 }
+
 .empty {
-  margin: auto;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
 }
 
