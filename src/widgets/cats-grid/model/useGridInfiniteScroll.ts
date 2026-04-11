@@ -15,7 +15,7 @@ export const useGridInfiniteScroll = ({
   const lastRequestedRowRef = useRef(-1);
 
   return useCallback(
-    (visible: CellsRange, all: CellsRange) => {
+    (_visible: CellsRange, all: CellsRange) => {
       if (!onEndReached || !hasNextPage || isFetchingNextPage) return;
 
       const triggerRow = Math.max(0, rowCount - 2);
