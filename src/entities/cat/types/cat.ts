@@ -6,10 +6,12 @@ export interface Cat {
 }
 
 export type CatImageSize = 'thumb' | 'small' | 'med' | 'full';
+export type CatMimeType = 'jpg' | 'png' | 'gif';
 
 export interface GetCatsParams {
   page: number;
   limit?: number;
   order?: 'RANDOM' | 'ASC' | 'DESC';
   size?: CatImageSize;
+  mimeTypes?: CatMimeType[];
 }

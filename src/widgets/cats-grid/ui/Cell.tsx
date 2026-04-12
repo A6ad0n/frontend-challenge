@@ -24,6 +24,7 @@ export const Cell = ({
   const index = rowIndex * columnCount + columnIndex;
   const cat = cats[index];
   const shouldLoadImage = rowIndex >= visibleRowStart - 1 && rowIndex <= visibleRowStop + 1;
+  const shouldPrioritizeImage = rowIndex <= visibleRowStart;
 
   if (!cat) {
     return (
@@ -50,6 +51,7 @@ export const Cell = ({
       <CatCard
         cat={cat}
         shouldLoadImage={shouldLoadImage}
+        shouldPrioritizeImage={shouldPrioritizeImage}
         onDoubleTap={() => toggleFavorite(cat.id)}
         action={<ToggleFavoriteButton catId={cat.id} />}
       />

@@ -7,6 +7,7 @@ interface CatCardMediaProps {
   isImageLoaded: boolean;
   onImageLoad: () => void;
   shouldLoadImage: boolean;
+  shouldPrioritizeImage?: boolean;
 }
 
 export const CatCardMedia = ({
@@ -15,6 +16,7 @@ export const CatCardMedia = ({
   isImageLoaded,
   onImageLoad,
   shouldLoadImage,
+  shouldPrioritizeImage = false,
 }: CatCardMediaProps) => {
   return (
     <>
@@ -24,7 +26,8 @@ export const CatCardMedia = ({
       <img
         src={shouldLoadImage ? imageSrc : undefined}
         alt={title}
-        loading="lazy"
+        loading={shouldPrioritizeImage ? 'eager' : 'lazy'}
+        fetchPriority={shouldPrioritizeImage ? 'high' : 'low'}
         decoding="async"
         onLoad={onImageLoad}
         className={classNames(styles.image, isImageLoaded && styles.imageLoaded)}

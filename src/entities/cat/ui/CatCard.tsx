@@ -8,6 +8,7 @@ interface CatCardProps {
   cat: Cat;
   action?: ReactNode;
   shouldLoadImage?: boolean;
+  shouldPrioritizeImage?: boolean;
   asListItem?: boolean;
   onDoubleTap?: () => void;
 }
@@ -16,6 +17,7 @@ export const CatCard = ({
   cat,
   action,
   shouldLoadImage = true,
+  shouldPrioritizeImage = false,
   asListItem = false,
   onDoubleTap,
 }: CatCardProps) => {
@@ -48,6 +50,7 @@ export const CatCard = ({
           isImageLoaded={isImageLoaded}
           onImageLoad={() => setIsImageLoaded(true)}
           shouldLoadImage={shouldLoadImage}
+          shouldPrioritizeImage={shouldPrioritizeImage}
         />
         <div className={classNames(styles.like, isImageLoaded && styles.likeVisible)}>{action}</div>
       </div>
