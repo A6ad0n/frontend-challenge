@@ -20,9 +20,20 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .section {
+    padding: 0 1rem 1rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 0 0.9rem 0.9rem;
     gap: 0.75rem;
+  }
+
+  .status,
+  .empty {
+    width: calc(100% - 1.8rem);
   }
 }

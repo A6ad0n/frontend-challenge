@@ -19,7 +19,16 @@
   transform: scale(1.05);
 }
 
+.card:focus-within .imageWrap {
+  transform: scale(1.05);
+}
+
 .card:hover {
+  box-shadow: 0 6px 8px rgba(10, 10, 20, 0.1), 0 20px 30px rgba(10, 10, 20, 0.2);
+  transform: none;
+}
+
+.card:focus-within {
   box-shadow: 0 6px 8px rgba(10, 10, 20, 0.1), 0 20px 30px rgba(10, 10, 20, 0.2);
   transform: none;
 }
@@ -62,6 +71,50 @@
 
 .card:hover .likeVisible {
   opacity: 1;
+}
+
+.card:focus-within .likeVisible {
+  opacity: 1;
+}
+
+.like:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+@media (pointer: coarse), (hover: none) {
+  .card {
+    margin: 0.5rem;
+  }
+
+  .like {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    gap: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .like {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .imageWrap,
+  .image,
+  .like,
+  .skeletonImage {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 @keyframes shimmer {

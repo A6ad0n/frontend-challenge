@@ -55,3 +55,39 @@
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
 }
+
+.retryButton:focus-visible {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .retryButton {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .message {
+    font-size: 1.1rem;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .retryButton {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+}

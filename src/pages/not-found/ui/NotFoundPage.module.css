@@ -51,3 +51,46 @@
   background-color: var(--primary-hover);
   border-color: var(--primary-hover);
 }
+
+.homeLink:focus-visible {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .homeLink {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .message {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .message {
+    font-size: 1.35rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+  }
+}
