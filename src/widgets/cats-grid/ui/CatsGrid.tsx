@@ -6,6 +6,7 @@ import { useCatsGridLayout } from '../model/useCatsGridLayout';
 import { useViewportWidth } from '../model/useViewportWidth';
 import styles from './CatsGrid.module.css';
 import { ToggleFavoriteButton } from '@/features/toggle-favorite';
+import { classNames } from '@/shared/lib/className';
 
 interface CatsGridProps {
   cats: Cat[];
@@ -13,7 +14,7 @@ interface CatsGridProps {
   skeletonCount?: number;
 }
 
-export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGridProps) => {
+export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 15 }: CatsGridProps) => {
   const toggleFavorite = useFavoriteCatsStore((state) => state.toggleFavorite);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const viewportWidth = useViewportWidth(viewportRef);
@@ -28,7 +29,7 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
       <>
         <div
           ref={viewportRef}
-          className={`${styles.grid} ${styles.virtualizedViewport}`}
+          className={classNames(styles.grid, styles.virtualizedViewport)}
           style={{
             ...gridStyle,
             gridAutoRows: viewportWidth > 0 ? `${rowHeight}px` : undefined,
@@ -57,18 +58,28 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
     <div
       ref={viewportRef}
       className={styles.grid}
-      style={gridStyle}
+      style={{
+        ...gridStyle,
+        gridAutoRows: viewportWidth > 0 ? `${rowHeight}px` : undefined,
+        columnGap: 0,
+        rowGap: 0,
+        padding: 0,
+        justifyContent: 'start',
+        alignContent: 'start',
+      }}
       role={cats.length > 0 ? 'list' : undefined}
       aria-label={cats.length > 0 ? 'Сетка с котиками' : undefined}
     >
       {cats.map((cat) => (
-        <CatCard
-          key={cat.id}
-          cat={cat}
-          asListItem
-          onDoubleTap={() => toggleFavorite(cat.id)}
-          action={<ToggleFavoriteButton catId={cat.id} />}
-        />
+        <div key={cat.id} className={styles.virtualizedCell}>
+          <CatCard
+            key={cat.id}
+            cat={cat}
+            asListItem
+            onDoubleTap={() => toggleFavorite(cat.id)}
+            action={<ToggleFavoriteButton catId={cat.id} />}
+          />
+        </div>
       ))}
     </div>
   );
