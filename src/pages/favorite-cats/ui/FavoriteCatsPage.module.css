@@ -4,6 +4,13 @@
   padding: 0 3.4rem 1.25rem;
 }
 
+.viewport {
+  height: 72vh;
+  height: clamp(460px, 72vh, 980px);
+  width: 100%;
+  overflow: hidden auto;
+}
+
 .emptyState {
   display: grid;
   gap: 0.65rem;
@@ -22,6 +29,7 @@
 }
 
 .emptyCta {
+  width: auto;
   width: fit-content;
   text-decoration: none;
   background: var(--primary);
@@ -52,6 +60,11 @@
   .section {
     padding: 0 1rem 1rem;
   }
+
+  .viewport {
+    height: 70vh;
+    height: clamp(420px, 70vh, 900px);
+  }
 }
 
 @media (max-width: 640px) {
@@ -60,8 +73,19 @@
     gap: 0.75rem;
   }
 
+  .viewport {
+    height: 68vh;
+    height: clamp(380px, 68vh, 780px);
+  }
+
   .emptyState {
     padding: 0.75rem;
   }
 }
 
+@media (pointer: coarse) {
+  .viewport {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

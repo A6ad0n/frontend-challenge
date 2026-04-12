@@ -25,10 +25,12 @@ export const ToggleFavoriteButton = ({ catId }: ToggleFavoriteButtonProps) => {
     <button
       type="button"
       onClick={handleClick}
+      onTouchEnd={(event) => event.stopPropagation()}
+      onDoubleClick={(event) => event.stopPropagation()}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={styles.button}
-      aria-label={isFavorite ? 'Remove cat from favorites' : 'Add cat to favorites'}
+      aria-label={isFavorite ? 'Убрать котика из избранного' : 'Добавить котика в избранное'}
       aria-pressed={isFavorite}
     >
       {showFilled ? (

@@ -10,7 +10,7 @@ const getLinkClassName = ({ isActive }: { isActive: boolean }) => {
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <nav className={styles.nav} aria-label="Primary">
+      <nav className={styles.nav} aria-label="Основная навигация">
         <NavLink to={ROUTES.cats} className={getLinkClassName}>
           Все котики
         </NavLink>
