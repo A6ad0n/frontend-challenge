@@ -12,7 +12,7 @@ export const FavoriteCatsPage = () => {
 
   return (
     <section className={styles.section}>
-      <CatsGrid cats={data || []} isLoading={isLoading} />
+      <CatsGrid cats={data || []} isLoading={isLoading} skeletonCount={favoriteIds.length} />
       {!isLoading && data?.length === 0 && (
         <div className={styles.emptyState} role="status" aria-live="polite">
           <p className={styles.emptyText}>Сохраняйте котиков и они будут появляться здесь.</p>
