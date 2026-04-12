@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import type { Cat } from '@entities/cat';
 import { CatCard, CatCardSkeleton } from '@entities/cat';
+import { useFavoriteCatsStore } from '@/features/toggle-favorite';
 import { useCatsGridLayout } from '../model/useCatsGridLayout';
 import { useViewportWidth } from '../model/useViewportWidth';
 import styles from './CatsGrid.module.css';
@@ -13,6 +14,7 @@ interface CatsGridProps {
 }
 
 export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGridProps) => {
+  const toggleFavorite = useFavoriteCatsStore((state) => state.toggleFavorite);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const viewportWidth = useViewportWidth(viewportRef);
   const { columnCount, rowHeight } = useCatsGridLayout(viewportWidth, skeletonCount);
@@ -64,6 +66,7 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
           key={cat.id}
           cat={cat}
           asListItem
+          onDoubleTap={() => toggleFavorite(cat.id)}
           action={<ToggleFavoriteButton catId={cat.id} />}
         />
       ))}

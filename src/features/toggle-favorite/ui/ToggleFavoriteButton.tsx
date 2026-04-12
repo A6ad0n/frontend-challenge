@@ -25,6 +25,8 @@ export const ToggleFavoriteButton = ({ catId }: ToggleFavoriteButtonProps) => {
     <button
       type="button"
       onClick={handleClick}
+      onTouchEnd={(event) => event.stopPropagation()}
+      onDoubleClick={(event) => event.stopPropagation()}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={styles.button}
