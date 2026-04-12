@@ -23,6 +23,7 @@
 }
 
 .virtualizedViewport {
+  height: 72vh;
   height: clamp(460px, 72vh, 980px);
   width: 100%;
   overflow: hidden;
@@ -39,6 +40,7 @@
 
 @media (max-width: 1024px) {
   .virtualizedViewport {
+    height: 70vh;
     height: clamp(420px, 70vh, 900px);
   }
 }
@@ -54,6 +56,7 @@
   }
 
   .virtualizedViewport {
+    height: 68vh;
     height: clamp(380px, 68vh, 780px);
   }
 }
