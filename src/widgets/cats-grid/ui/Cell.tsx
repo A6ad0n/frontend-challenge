@@ -34,7 +34,7 @@ export const Cell = ({
         role="gridcell"
         aria-colindex={columnIndex + 1}
       >
-        <div role="status" aria-live="polite" aria-label="Loading cat cards">
+        <div role="status" aria-live="polite" aria-label="Загружаем карточки котиков">
           <CatCardSkeleton />
         </div>
       </div>

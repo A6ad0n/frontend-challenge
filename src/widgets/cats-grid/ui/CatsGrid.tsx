@@ -40,7 +40,7 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
           }}
           role="status"
           aria-live="polite"
-          aria-label="Loading cat cards"
+          aria-label="Загружаем карточки котиков"
         >
           {Array.from({ length: skeletonCount }).map((_, index) => (
             <div key={`skeleton-${index}`} className={styles.virtualizedCell}>
@@ -59,7 +59,7 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
       className={styles.grid}
       style={gridStyle}
       role={cats.length > 0 ? 'list' : undefined}
-      aria-label={cats.length > 0 ? 'Cats grid' : undefined}
+      aria-label={cats.length > 0 ? 'Сетка с котиками' : undefined}
     >
       {cats.map((cat) => (
         <CatCard
