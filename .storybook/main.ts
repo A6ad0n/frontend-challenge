@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { mergeConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
@@ -18,6 +19,7 @@ export default {
   framework: '@storybook/react-vite',
   viteFinal: async (config) =>
     mergeConfig(config, {
+      plugins: [svgr()],
       resolve: {
         alias: {
           '@': path.resolve(dirname, '../src'),

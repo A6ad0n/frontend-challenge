@@ -10,6 +10,7 @@ export const getCats = async (params: GetCatsParams): Promise<Cat[]> => {
       limit: params.limit ?? CATS_API_CONFIG.DEFAULT_LIMIT,
       order: params.order ?? CATS_API_CONFIG.DEFAULT_ORDER,
       size: params.size ?? CATS_API_CONFIG.DEFAULT_SIZE,
+      mime_types: (params.mimeTypes ?? CATS_API_CONFIG.DEFAULT_MIME_TYPES).join(','),
     },
   });
 
