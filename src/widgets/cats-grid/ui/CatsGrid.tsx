@@ -29,9 +29,18 @@ export const CatsGrid = ({ cats, isLoading = false, skeletonCount = 10 }: CatsGr
   }
 
   return (
-    <div className={styles.grid} role="list" aria-label="Cats grid">
+    <div
+      className={styles.grid}
+      role={cats.length > 0 ? 'list' : undefined}
+      aria-label={cats.length > 0 ? 'Cats grid' : undefined}
+    >
       {cats.map((cat) => (
-        <CatCard key={cat.id} cat={cat} action={<ToggleFavoriteButton catId={cat.id} />} />
+        <CatCard
+          key={cat.id}
+          cat={cat}
+          asListItem
+          action={<ToggleFavoriteButton catId={cat.id} />}
+        />
       ))}
     </div>
   );

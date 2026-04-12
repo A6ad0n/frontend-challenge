@@ -25,14 +25,26 @@ export const Cell = ({
 
   if (!cat) {
     return (
-      <div style={style}>
-        <CatCardSkeleton />
+      <div
+        style={style}
+        className={styles.virtualizedCell}
+        role="gridcell"
+        aria-colindex={columnIndex + 1}
+      >
+        <div role="status" aria-live="polite" aria-label="Loading cat cards">
+          <CatCardSkeleton />
+        </div>
       </div>
     );
   }
 
   return (
-    <div style={style} className={styles.virtualizedCell}>
+    <div
+      style={style}
+      className={styles.virtualizedCell}
+      role="gridcell"
+      aria-colindex={columnIndex + 1}
+    >
       <CatCard
         cat={cat}
         shouldLoadImage={shouldLoadImage}
