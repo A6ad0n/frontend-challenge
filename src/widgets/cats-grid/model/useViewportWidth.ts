@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
 
 export const useViewportWidth = (ref: React.RefObject<HTMLElement | null>) => {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 0;
+    }
+
+    return window.innerWidth;
+  });
 
   useEffect(() => {
     const node = ref.current;

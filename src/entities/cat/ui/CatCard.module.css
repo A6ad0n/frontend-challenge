@@ -47,6 +47,11 @@
   opacity: 1;
 }
 
+.imagePriority {
+  opacity: 1;
+  transition: none;
+}
+
 .skeletonImage {
   background: linear-gradient(100deg, var(--skeleton-base) 20%, var(--skeleton-glow) 50%, var(--skeleton-base) 80%);
   background-size: 200% 100%;

@@ -30,7 +30,11 @@ export const CatCardMedia = ({
         fetchPriority={shouldPrioritizeImage ? 'high' : 'low'}
         decoding="async"
         onLoad={onImageLoad}
-        className={classNames(styles.image, isImageLoaded && styles.imageLoaded)}
+        className={classNames(
+          styles.image,
+          isImageLoaded && styles.imageLoaded,
+          shouldPrioritizeImage && styles.imagePriority
+        )}
       />
     </>
   );
