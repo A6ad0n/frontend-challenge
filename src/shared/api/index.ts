@@ -1,0 +1,1 @@
+export { catApiClient } from './client';

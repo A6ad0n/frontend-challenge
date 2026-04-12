@@ -1,0 +1,96 @@
+.container {
+  min-height: calc(100vh - 69px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary);
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 8rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+}
+
+.message {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin: 1rem 0 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.homeLink {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--secondary);
+  text-decoration: none;
+  background-color: var(--primary);
+  padding: 1.3rem 2rem;
+  border: 1px solid var(--secondary);
+  transition: all 0.2s ease;
+}
+
+.homeLink:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.homeLink:focus-visible {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .homeLink {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 6rem;
+  }
+
+  .message {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .message {
+    font-size: 1.35rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+  }
+}
