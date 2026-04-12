@@ -8,13 +8,19 @@ interface CatCardProps {
   cat: Cat;
   action?: ReactNode;
   shouldLoadImage?: boolean;
+  asListItem?: boolean;
 }
 
-export const CatCard = ({ cat, action, shouldLoadImage = true }: CatCardProps) => {
+export const CatCard = ({
+  cat,
+  action,
+  shouldLoadImage = true,
+  asListItem = false,
+}: CatCardProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
-    <article className={styles.card} role="listitem">
+    <article className={styles.card} role={asListItem ? 'listitem' : undefined}>
       <div className={styles.imageWrap}>
         <CatCardMedia
           key={cat.id}

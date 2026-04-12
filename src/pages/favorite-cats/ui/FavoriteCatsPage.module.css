@@ -1,7 +1,7 @@
 .section {
   display: grid;
   gap: 1rem;
-  padding: 0 1.25rem 1.25rem;
+  padding: 0 3.4rem 1.25rem;
 }
 
 .emptyState {
@@ -34,10 +34,34 @@
   background-color: var(--primary-hover);
 }
 
+.emptyCta:focus-visible {
+  background-color: var(--primary-hover);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .emptyCta {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 0 1rem 1rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section {
-    padding: 0 0.9rem 0.9rem;
+    padding: 0 0.5rem 0.9rem;
     gap: 0.75rem;
+  }
+
+  .emptyState {
+    padding: 0.75rem;
   }
 }
 
